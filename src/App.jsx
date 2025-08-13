@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Tech from "./components/Tech";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div className='text-6xl text-amber-900'>
-      hello world
-    </div>
-  )
-}
+    <>
+      <div className="fixed -z-10 min-h-screen w-full  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+      <main className="flex flex-col items-center px-4 md:px-8 lg:px-16">
+        <Navbar />
+        <Hero />
+        <Tech />
+        <Project />
+        <Contact />
+      </main>
+    </>
+  );
+};
 
-export default App
+export default App;
