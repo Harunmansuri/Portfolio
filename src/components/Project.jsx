@@ -12,37 +12,47 @@ const projectData = [
   {
     image: image1,
     title: "My Portfolio",
-    description: "A modern and responsive portfolio website built with React and Framer Motion, featuring smooth animations, interactive UI, and a clean design to showcase my skills and projects.",
-    technologies: ["React","Tailwind CSS","Framer Motion"],
+    description:
+      "A modern and responsive portfolio website built with React and Framer Motion, featuring smooth animations, interactive UI, and a clean design to showcase my skills and projects.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
     href: "https://github.com/Harunmansuri/Portfolio",
+    live: "https://harunmansuri.vercel.app",
   },
   {
     image: image2,
     title: "Youtube UI Clone",
-    description: "A YouTube UI clone built with React, featuring a clean and responsive design. Integrated with YouTube API to fetch real-time videos, search results, and channel data.",
+    description:
+      "A YouTube UI clone built with React, featuring a clean and responsive design. Integrated with YouTube API to fetch real-time videos, search results, and channel data.",
     technologies: ["React"],
     href: "https://github.com/Harunmansuri/Youtube-Clone",
+    live: "#",
   },
   {
     image: image3,
     title: "Todo App",
-    description: "A simple and interactive Todo application built with HTML, CSS, and JavaScript. Allows users to add, manage, and delete tasks with a clean and responsive interface.",
+    description:
+      "A simple and interactive Todo application built with HTML, CSS, and JavaScript. Allows users to add, manage, and delete tasks with a clean and responsive interface.",
     technologies: ["HTML", "CSS", "Javascript"],
     href: "https://github.com/Harunmansuri/To-do-list",
+    live: "#",
   },
   {
     image: image4,
     title: "Gemini Clone",
-    description: "A Gemini AI clone built with React, integrated using the Gemini API. Users can chat and get real-time AI-powered responses in a clean UI",
+    description:
+      "A Gemini AI clone built with React, integrated using the Gemini API. Users can chat and get real-time AI-powered responses in a clean UI",
     technologies: ["React"],
     href: "https://github.com/Harunmansuri/Gemini-clone",
+    live: "#",
   },
   {
     image: image5,
     title: "Netflix UI Clone",
-    description: "A Netflix UI clone built with React, featuring a sleek design and smooth navigation. Integrated with API to display movies and TV shows dynamically.",
+    description:
+      "A Netflix UI clone built with React, featuring a sleek design and smooth navigation. Integrated with API to display movies and TV shows dynamically.",
     technologies: ["React"],
     href: "https://github.com/Harunmansuri/Netflix-Clone",
+    live: "#",
   },
 ];
 
@@ -66,13 +76,15 @@ const ProjectCard = ({ project }) => {
         <img
           src={project.image}
           alt=""
-          className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px] "
+          className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]"
         />
+
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <div className="text-xl font-semibold">{project.title}</div>
             <p className="text-sm text-gray-400">{project.description}</p>
           </div>
+
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech, index) => (
               <span key={index} className="rounded-lg bg-black p-3">
@@ -80,8 +92,9 @@ const ProjectCard = ({ project }) => {
               </span>
             ))}
           </div>
+
           <div className="flex flex-row items-center gap-6">
-            {/* GitHub Icon */}
+            {/* GitHub */}
             <a
               href={project.href}
               target="_blank"
@@ -91,9 +104,9 @@ const ProjectCard = ({ project }) => {
               <BsGithub className="text-2xl sm:text-3xl cursor-pointer text-white hover:text-purple-500" />
             </a>
 
-            {/* Eye Icon */}
+            {/* Live Demo */}
             <a
-              href="#"
+              href={project.live}
               target="_blank"
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:scale-110"
