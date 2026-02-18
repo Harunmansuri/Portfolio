@@ -29,12 +29,12 @@ const projectData = [
   },
   {
     image: image3,
-    title: "Todo App",
+    title: "TaskZEN App",
     description:
-      "A simple and interactive Todo application built with HTML, CSS, and JavaScript. Allows users to add, manage, and delete tasks with a clean and responsive interface.",
-    technologies: ["HTML", "CSS", "Javascript"],
-    href: "https://github.com/Harunmansuri/To-do-list",
-    live: "#",
+      "TaskZen is a MERN stack-based task management web application that allows users to create, manage, and track tasks with authentication, priority settings, and deadline management. It features a responsive UI and secure backend integration to enhance productivity and workflow management.",
+    technologies: ["react", "tailwind css", "express js", "mongodb"],
+    href: "https://github.com/Harunmansuri/TaskZen",
+    live: "https://task-zen-frontend-git-master-harunmansuris-projects.vercel.app/register",
   },
   {
     image: image4,
