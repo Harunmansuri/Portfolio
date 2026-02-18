@@ -20,12 +20,12 @@ const projectData = [
   },
   {
     image: image2,
-    title: "Youtube UI Clone",
+    title: "PrepCs Chat Bot",
     description:
-      "A YouTube UI clone built with React, featuring a clean and responsive design. Integrated with YouTube API to fetch real-time videos, search results, and channel data.",
-    technologies: ["React"],
-    href: "https://github.com/Harunmansuri/Youtube-Clone",
-    live: "#",
+      "PrepCs Chat Bot – A MERN Stack chatbot that provides short and crisp answers for core Computer Science topics. Built using React.js, Tailwind CSS, Node.js, Express.js, and MongoDB, with a focus on clean UI, efficient APIs, and scalable backend. Currently running on limited data and continuously improving.",
+    technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    href: "https://github.com/Harunmansuri/PrepCs-Chat-Bot",
+    live: "https://prep-cs-frontend.vercel.app/",
   },
   {
     image: image3,
