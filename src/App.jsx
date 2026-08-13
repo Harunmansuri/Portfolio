@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Tech from "./components/Tech";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <main className="flex flex-col items-center px-4 md:px-8 lg:px-16">
         <Navbar />
         <Hero />
+        <About />
         <Tech />
         <Project />
         <Contact />

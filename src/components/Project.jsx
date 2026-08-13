@@ -1,68 +1,120 @@
 import React from "react";
-import image1 from "/public/1.png";
-import image2 from "/public/2.png";
-import image3 from "/public/3.png";
-import image4 from "/public/4.png";
-import image5 from "/public/5.png";
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
-import { FaEye } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projectData = [
   {
-    image: image1,
+    image: "/1.png",
     title: "My Portfolio",
+    category: "Personal Portfolio",
     description:
-      "A modern and responsive portfolio website built with React and Framer Motion, featuring smooth animations, interactive UI, and a clean design to showcase my skills and projects.",
+      "A modern and responsive developer portfolio built to showcase my skills, experience, projects, and services with smooth animations and a clean user experience.",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    href: "https://github.com/Harunmansuri/Portfolio",
-    live: "https://harunmansuri.vercel.app",
+    github: "https://github.com/Harunmansuri/Portfolio",
+    live: "https://harunmansuri.vercel.app/",
   },
+
   {
-    image: image2,
-    title: "PrepCs Chat Bot",
+    image: "/3.png",
+    title: "TaskZen",
+    category: "Task Management",
     description:
-      "PrepCs Chat Bot – A MERN Stack chatbot that provides short and crisp answers for core Computer Science topics. Built using React.js, Tailwind CSS, Node.js, Express.js, and MongoDB, with a focus on clean UI, efficient APIs, and scalable backend. Currently running on limited data and continuously improving.",
-    technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    href: "https://github.com/Harunmansuri/PrepCs-Chat-Bot",
-    live: "https://prep-cs-frontend.vercel.app/",
-  },
-  {
-    image: image3,
-    title: "TaskZEN App",
-    description:
-      "TaskZen is a MERN stack-based task management web application that allows users to create, manage, and track tasks with authentication, priority settings, and deadline management. It features a responsive UI and secure backend integration to enhance productivity and workflow management.",
-    technologies: ["react", "tailwind css", "express js", "mongodb"],
-    href: "https://github.com/Harunmansuri/TaskZen",
+      "A full-stack task management application that allows users to create, organize, prioritize, and track tasks with authentication and deadline management.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    github: "https://github.com/Harunmansuri/TaskZen",
     live: "https://task-zen-frontend-git-master-harunmansuris-projects.vercel.app/register",
   },
+
   {
-    image: image4,
-    title: "Gemini Clone",
+    image: "/7.png",
+    title: "CashMate",
+    category: "Expense Management",
     description:
-      "A Gemini AI clone built with React, integrated using the Gemini API. Users can chat and get real-time AI-powered responses in a clean UI",
-    technologies: ["React"],
-    href: "https://github.com/Harunmansuri/Gemini-clone",
-    live: "#",
+      "A modern expense management application designed to help users manage and track their financial activities through a simple and responsive interface.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    github: null,
+    live: "https://cashmate-ecru.vercel.app/login",
   },
+
   {
-    image: image5,
-    title: "Netflix UI Clone",
+    image: "/6.png",
+    title: "Gup-Chup Chat App",
+    category: "Real-Time Chat",
     description:
-      "A Netflix UI clone built with React, featuring a sleek design and smooth navigation. Integrated with API to display movies and TV shows dynamically.",
-    technologies: ["React"],
-    href: "https://github.com/Harunmansuri/Netflix-Clone",
-    live: "#",
+      "A real-time chat application that enables users to communicate instantly through a responsive interface with real-time messaging functionality.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+    ],
+    github: null,
+    live: "https://gup-chup-chat-app.vercel.app/",
+  },
+
+  {
+    image: "/2.png",
+    title: "PrepCs Chat Bot",
+    category: "AI / Chatbot",
+    description:
+      "A Computer Science learning chatbot that provides short and concise answers to core CS concepts using a modern React frontend and scalable backend architecture.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    github: "https://github.com/Harunmansuri/PrepCs-Chat-Bot",
+    live: "https://prep-cs-frontend.vercel.app/",
+  },
+
+  {
+    image: "/4.png",
+    title: "Gemini Clone",
+    category: "Generative AI",
+    description:
+      "A Gemini-inspired AI chatbot interface integrated with the Gemini API to provide real-time AI-powered responses through a clean and responsive UI.",
+    technologies: ["React", "Gemini API"],
+    github: "https://github.com/Harunmansuri/Gemini-clone",
+    live: null,
+  },
+
+  {
+    image: "/5.png",
+    title: "Netflix UI Clone",
+    category: "Frontend",
+    description:
+      "A responsive Netflix-inspired streaming interface featuring a modern layout and dynamically loaded movie and TV show content.",
+    technologies: ["React", "API"],
+    github: "https://github.com/Harunmansuri/Netflix-Clone",
+    live: null,
   },
 ];
 
-const ScrollReveal = ({ children }) => {
+const ScrollReveal = ({ children, delay = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.6,
+        delay,
+      }}
     >
       {children}
     </motion.div>
@@ -71,73 +123,119 @@ const ScrollReveal = ({ children }) => {
 
 const ProjectCard = ({ project }) => {
   return (
-    <ScrollReveal>
-      <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
+    <motion.article
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3 }}
+      className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm"
+    >
+      {/* Image */}
+      <div className="relative h-56 w-full overflow-hidden bg-gray-900">
         <img
           src={project.image}
-          alt=""
-          className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]"
+          alt={project.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-3">
-            <div className="text-xl font-semibold">{project.title}</div>
-            <p className="text-sm text-gray-400">{project.description}</p>
-          </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70" />
 
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, index) => (
-              <span key={index} className="rounded-lg bg-black p-3">
-                {tech}
-              </span>
-            ))}
-          </div>
+        {/* Category */}
+        <span className="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 text-xs text-gray-300 backdrop-blur-md">
+          {project.category}
+        </span>
+      </div>
 
-          <div className="flex flex-row items-center gap-6">
-            {/* GitHub */}
+      {/* Content */}
+      <div className="flex flex-col p-6">
+        <h2 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-purple-400">
+          {project.title}
+        </h2>
+
+        <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-400">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="mt-5 flex min-h-[58px] flex-wrap content-start gap-2">
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-gray-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Buttons */}
+        <div className="mt-6 flex items-center gap-3">
+          {project.github && (
             <a
-              href={project.href}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-sm text-gray-300 transition-all duration-300 hover:border-purple-500/40 hover:bg-purple-500/10 hover:text-white"
             >
-              <BsGithub className="text-2xl sm:text-3xl cursor-pointer text-white hover:text-purple-500" />
+              <BsGithub className="text-lg" />
+              GitHub
             </a>
+          )}
 
-            {/* Live Demo */}
+          {project.live && (
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-110"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/20"
             >
-              <FaEye className="text-2xl sm:text-3xl cursor-pointer text-white hover:text-purple-500" />
+              <FaExternalLinkAlt className="text-xs" />
+              Live Demo
             </a>
-          </div>
+          )}
         </div>
       </div>
-    </ScrollReveal>
+    </motion.article>
   );
 };
 
 const Project = () => {
   return (
-    <div
+    <section
       id="project"
-      className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24"
+      className="w-full px-5 py-20 text-white md:px-10 md:py-28"
     >
-      <ScrollReveal>
-        <h1 className="text-4xl font-light text-white md:text-6xl">
-          My Projects
-        </h1>
-      </ScrollReveal>
+      <div className="mx-auto max-w-6xl">
+        {/* Heading */}
+        <ScrollReveal>
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-indigo-400">
+              My Work
+            </p>
 
-      <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
-        {projectData.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+            <h1 className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-4xl font-semibold text-transparent md:text-6xl">
+              Featured Projects
+            </h1>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 md:text-base">
+              A selection of projects I've built using modern technologies,
+              full-stack development practices, and AI-powered solutions.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {projectData.map((project, index) => (
+            <ScrollReveal
+              key={project.title}
+              delay={index % 2 === 0 ? 0 : 0.1}
+            >
+              <ProjectCard project={project} />
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
